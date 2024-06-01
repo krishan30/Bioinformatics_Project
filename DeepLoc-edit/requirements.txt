@@ -1,0 +1,15 @@
+numpy
+matplotlib
+pandas
+scipy
+Bio
+torch
+onnxruntime>=1.7.0
+fair-esm
+transformers
+pytorch_lightning
+sentencepiece 
+pickle4
+h5py
+pandas<2.0.0
+scikit-learn

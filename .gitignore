@@ -1,0 +1,8 @@
+DeepLoc-edit/data_files/embeddings/*.h5
+DeepLoc-edit/models/models_*
+DeepLoc-edit/outputs/*
+DeepLoc-edit/src/__pycache__/*
+
+.DS_Store
+
+playground.ipynb
