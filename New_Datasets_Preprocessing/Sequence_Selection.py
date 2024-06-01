@@ -95,11 +95,11 @@ def filter_critical_sequences(dataset):
 
 def main():
     # Load protein sequences from CSV files
-    dataset1_sequences = filter_critical_sequences(load_sequences_from_csv("Dataset/dataset_1_data_sub_part_1.csv")) # change the file name
-    reference_dataset = load_sequences_from_csv("Dataset/Swissprot_Train_Validation_dataset.csv")
+    dataset1_sequences = filter_critical_sequences(load_sequences_from_csv("Divided_Datasets/Deeploc1.0/deeploc_data_sub_part_2.csv")) # change the file name
+    reference_dataset = load_sequences_from_csv("Datasets/Swissprot/Swissprot_Train_Validation_dataset.csv")
     filtered_dataset1 = remove_duplicates(dataset1_sequences, reference_dataset)
     dataset1_seq = filtered_dataset1['Sequence'].tolist()
-    dataset2_sequences = load_sequences_from_csv("Dataset/hpa_testset.csv")
+    dataset2_sequences = load_sequences_from_csv("Datasets/Hpa/hpa_testset.csv")
     dataset2_seq = dataset2_sequences['fasta'].tolist()
     new_sequences = pd.DataFrame(columns=filtered_dataset1.columns)
     # Calculate overall similarity between datasets
@@ -110,10 +110,10 @@ def main():
             print("Entry", seq1_index, "is unique")
             new_sequences = pd.concat([new_sequences, pd.DataFrame([filtered_dataset1.iloc[seq1_index]])],
                                       ignore_index=True)
-            new_sequences.to_csv("Dataset/dataset_1_data_sub_part_1_include.csv", index=False)
+            new_sequences.to_csv("Preprocessed_Datasets/Deeploc1.0/deeploc_data_sub_part_2_include.csv", index=False)
         else:
             print("Entry", seq1_index, "is not unique")
-    new_sequences.to_csv("Dataset/dataset_1_data_sub_part_1_include.csv", index=False)
+    new_sequences.to_csv("Preprocessed_Datasets/Deeploc1.0/deeploc_data_sub_part_2_include.csv", index=False)
 
 
 if __name__ == "__main__":

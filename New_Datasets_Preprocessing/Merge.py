@@ -18,6 +18,6 @@ def csv_to_fasta(csv_file, fasta_file):
 
 
 # Example usage
-csv_file_path = "deeploc_combined_data_1kclipped.csv"
-fasta_file_path = "deeploc_swissprot_clipped1k.fasta"
+csv_file_path = "Combined_Dataset/deeploc_combined_data_1kclipped.csv"
+fasta_file_path = "Final_Datasets/Modified_Dataset_Ex/deeploc_swissprot_clipped1k.fasta"
 csv_to_fasta(csv_file_path, fasta_file_path)
